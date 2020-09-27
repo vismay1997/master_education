@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+    <body>
+        <div layout:fragment="content">
+            <div class="card card-custom">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Input Sizing
+                    </h3>
+                </div>
+                <!--begin::Form-->
+                <form class="form">
+                    <div class="card-body">
+                        <div class="form-group form-group-last">
+                            <div class="alert alert-custom alert-default" role="alert">
+                                <div class="alert-icon"><i class="flaticon-warning text-primary"></i></div>
+                                <div class="alert-text">
+                                    Set heights using classes like <code>.form-control-lg</code>, and set widths using grid column classes like <code>.col-lg-*</code>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Large Input</label>
+                            <input type="email" class="form-control form-control-lg"  placeholder="Large input"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Default Input</label>
+                            <input type="email" class="form-control"  placeholder="Large input"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Small Input</label>
+                            <input type="email" class="form-control form-control-sm"  placeholder="Large input"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelectl">Large Select</label>
+                            <select class="form-control form-control-lg" id="exampleSelectl">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelectd">Default Select</label>
+                            <select class="form-control" id="exampleSelectd">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleSelects">Small Select</label>
+                            <select class="form-control form-control-sm" id="exampleSelects">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="reset" class="btn btn-success mr-2">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+    </body>
+</html>
