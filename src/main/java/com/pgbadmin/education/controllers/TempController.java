@@ -6,16 +6,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TempController {
     @GetMapping("/")
-    public String getHome(){
+    public String getHome() {
         return "common/index";
     }
+
+    @GetMapping("/test-error")
+    public String getTextErrorHome() {
+        if (true) {
+            throw new RuntimeException("Invalid Request");
+        }
+        return "common/index";
+    }
+
     @GetMapping("/admin")
-    public String getAdminHome(){
+    public String getAdminHome() {
         return "admin/index";
     }
 
     @GetMapping("/student")
-    public String getStudentHome(){
+    public String getStudentHome() {
         return "student/index";
     }
 
