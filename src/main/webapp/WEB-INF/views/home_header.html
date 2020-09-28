@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -263,11 +263,10 @@
             <!--end::Header Menu Wrapper-->
 
             <!--begin::Topbar-->
-            <div class="topbar">
+            <div class="topbar" style="z-index: 2">
                 <!--begin::User-->
                 <div class="topbar-item">
-                    <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2"
-                         id="kt_quick_user_toggle">
+                    <a th:href="@{/login}" class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2">
                         <span class="svg-icon svg-icon-primary svg-icon-2x svg-icon-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -280,7 +279,7 @@
                                </g>
                            </svg>
                           </span> Login
-                    </div>
+                    </a>
                 </div>
                 <!--end::User-->
             </div>
