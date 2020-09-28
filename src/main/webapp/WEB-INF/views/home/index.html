@@ -10,6 +10,7 @@
 
     <link th:href="@{/resources/css/vender.bundle.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/resources/css/theme.bundle.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/resources/css/pages/common/slider.css}" rel="stylesheet" type="text/css"/>
 
     <!--begin::Layout Themes(used by all pages)-->
     <link th:href="@{/resources/css/themes/layout/header/base/light.css}" rel="stylesheet" type="text/css"/>
@@ -36,7 +37,12 @@
                         <div class="col-lg-12 mb-5">
                             <div class="card card-custom card-stretch">
                                 <div class="card-body">
-                                    <img th:src="@{/resources/images/home/school_image.jpg}" style="width: 100%;"/>
+                                    <div class="owl-carousel">
+                                        <img th:src="@{/resources/images/home/school_image.jpg}" style="width: 100%;"/>
+                                        <img th:src="@{/resources/images/home/school_image.jpg}" style="width: 100%;"/>
+                                        <img th:src="@{/resources/images/home/school_image.jpg}" style="width: 100%;"/>
+                                        <img th:src="@{/resources/images/home/school_image.jpg}" style="width: 100%;"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -577,5 +583,17 @@
 };</script>
 <script th:src="@{/resources/js/vender.bundle.js}"></script>
 <script th:src="@{/resources/js/theme.bundle.js}"></script>
+<script th:src="@{/resources/js/pages/common/slider.js}"></script>
+<script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true
+    });
+</script>
 </body>
 </html>
