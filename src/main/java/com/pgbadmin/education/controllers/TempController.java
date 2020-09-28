@@ -20,12 +20,17 @@ public class TempController {
     }
 
     @GetMapping("/login")
-    public String getLogin(){
+    public String getLogin() {
         return "common/login";
     }
 
     @GetMapping("/error-page")
-    public String getErrorPage(){
+    public String getErrorPage() {
         return "common/error";
+    }
+
+    @GetMapping("/home")
+    public String getHomePage() {
+        return "home/index";
     }
 }
