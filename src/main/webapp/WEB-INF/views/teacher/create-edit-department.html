@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+<body>
+<div layout:fragment="heading">Create Edit Department</div>
+<div layout:fragment="content">
+    <div class="card card-custom">
+        <form class="form" method="post" th:object="${model}">
+            <div class="card-body">
+                <div class="form-group row mt-4">
+                    <label class="col-3 col-form-label font">Department Name :</label>
+                    <div class="col-9">
+                        <input type="text" th:field="*{departmentName}" class="form-control"
+                               placeholder="Please Enter Department Name"/>
+                    </div>
+                </div>
+                <div class="form-group row mt-4">
+                    <label class="col-3 col-form-label">Department Description :</label>
+                    <div class="col-9">
+                        <textarea th:field="*{description}" id="department_description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row mt-4">
+                    <label class="col-3 col-form-label">Department Logo :</label>
+                    <div class="col-9">
+                        <div class="custom-file">
+                            <input type="file" th:field="*{departmentLogo}" class="custom-file-input" id="customFile"/>
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-9">
+                        <input type="submit" class="btn btn-primary mr-2" value="Submit"></input>
+                        <input type="reset" class="btn btn-secondary">Cancel</input>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div layout:fragment="scripts">
+    <script th:src="@{/resources/js/pages/common/ckeditor.js}"></script>
+    <script>
+        var KTCkeditor = function () {
+            // Private functions
+            var demos = function () {
+                ClassicEditor
+                    .create(document.querySelector('#department_description'))
+                    .then(editor => {
+                        console.log(editor);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }
+
+            return {
+                // public functions
+                init: function () {
+                    demos();
+                }
+            };
+        }();
+
+        // Initialization
+        jQuery(document).ready(function () {
+            KTCkeditor.init();
+        });
+    </script>
+</div>
+</body>
+</html>
