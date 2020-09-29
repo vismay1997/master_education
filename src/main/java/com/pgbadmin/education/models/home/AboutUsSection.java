@@ -7,15 +7,14 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Slidebar {
+public class AboutUsSection {
+
     @Id
     @GeneratedValue
-    private Long slidebarId;
-
-    private String name;
-
-    @OneToMany(mappedBy = "slidebar")
-    private List<SlideBarImages> images;
+    private Long aboutUsId;
+    private String Title;
+    private String description;
+    private byte[] image;
 
 
 }
