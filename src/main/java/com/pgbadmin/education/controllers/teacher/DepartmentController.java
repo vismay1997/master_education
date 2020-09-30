@@ -1,7 +1,7 @@
-package com.pgbadmin.education.controllers;
+package com.pgbadmin.education.controllers.teacher;
 
 import com.pgbadmin.education.models.teacher.Department;
-import com.pgbadmin.education.services.DepartmentService;
+import com.pgbadmin.education.services.teacher.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

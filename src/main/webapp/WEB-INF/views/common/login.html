@@ -7,10 +7,10 @@
 		<title>Welcome To Login Section</title>
 		<meta name="description" content="Login page example"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-		<link th:href="@{resources/css/pink-vender.bundle.css}" rel="stylesheet" type="text/css"/>
-		<link th:href="@{resources/css/pink-theme.bundle.css}" rel="stylesheet" type="text/css"/>
-		<link th:href="@{resources/css/pages/login/login_page.css}" rel="stylesheet" type="text/css"/>
-		<link rel="shortcut icon" th:href="@{resources/images/logos/logo.png}"/>
+		<link th:href="@{/resources/css/pink-vender.bundle.css}" rel="stylesheet" type="text/css"/>
+		<link th:href="@{/resources/css/pink-theme.bundle.css}" rel="stylesheet" type="text/css"/>
+		<link th:href="@{/resources/css/pages/login/login_page.css}" rel="stylesheet" type="text/css"/>
+		<link rel="shortcut icon" th:href="@{/resources/images/logos/logo.png}"/>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -28,22 +28,35 @@
 							<div class="text-center mb-10 mb-lg-20">
 								<h3 class="font-size-h1">Sign In</h3>
 								<p class="text-muted font-weight-bold">Enter your username and password</p>
+								<div th:if="${error != null}"
+									 class="alert alert-custom alert-outline-success fade show mb-5"
+									 role="alert">
+									<div class="alert-icon"><i class="flaticon-multimedia-2"></i></div>
+									<div class="alert-text" th:text="${error}"></div>
+									<div class="alert-close">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true"><i class="ki ki-close"></i></span>
+										</button>
+									</div>
+								</div>
 							</div>
 							<!--begin::Form-->
-							<form class="form" novalidate="novalidate" id="kt_login_signin_form">
+							<form class="form" method="post">
 								<div class="form-group">
-									<input class="form-control form-control-solid h-auto py-5 px-6" type="text" placeholder="Username" name="username" autocomplete="off" />
+									<input class="form-control form-control-solid h-auto py-5 px-6" type="text"
+										   placeholder="Username" name="username" autocomplete="off"/>
 								</div>
 								<div class="form-group">
-									<input class="form-control form-control-solid h-auto py-5 px-6" type="password" placeholder="Password" name="password" autocomplete="off" />
+									<input class="form-control form-control-solid h-auto py-5 px-6" type="password"
+										   placeholder="Password" name="password" autocomplete="off"/>
 								</div>
 								<!--begin::Action-->
 								<div class="form-group d-flex flex-wrap justify-content-between align-items-center">
 									<a href="javascript:" class="text-dark-50 text-hover-primary my-3 mr-2"
 									   id="kt_login_forgot">Forgot Password ?</a>
-									<button type="button" id="kt_login_signin_submit"
-											class="btn btn-primary font-weight-bold px-9 py-4 my-3">Sign In
-									</button>
+									<input type="submit" class="btn btn-primary font-weight-bold px-9 py-4 my-3"
+										   value="Sign In">
+									</input>
 								</div>
 								<!--end::Action-->
 							</form>
@@ -140,9 +153,9 @@
 			"font-family": "Poppins"
 		};</script>
 
-		<script th:src="@{resources/js/vender.bundle.js}"></script>
-		<script th:src="@{resources/js/theme.bundle.js}"></script>
-		<script th:src="@{resources/js/pages/login/login-page.js}"></script>
+		<script th:src="@{/resources/js/vender.bundle.js}"></script>
+		<script th:src="@{/resources/js/theme.bundle.js}"></script>
+		<script th:src="@{/resources/js/pages/login/login-page.js}"></script>
 
 	</body>
 	<!--end::Body-->

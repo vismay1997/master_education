@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
-    <div layout:fragment="header">
+<div layout:fragment="header">
 
-        <!--begin::Header-->
-        <div id="kt_header" class="header header-fixed">
+    <!--begin::Header-->
+    <div id="kt_header" class="header header-fixed">
 
-            <!--begin::Container-->
-            <div class="container d-flex align-items-stretch justify-content-between">
+        <!--begin::Container-->
+        <div class="container d-flex align-items-stretch justify-content-between">
 
-                <!--begin::Header Menu Wrapper-->
-                <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+            <!--begin::Header Menu Wrapper-->
+            <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
 
-                    <!--begin::Header Logo-->
-                    <div class="header-logo">
-                        <a href="index.html">
-                            <img alt="Logo" src="resources/images/logos/logo.png" />
-                        </a>
-                    </div>
+                <!--begin::Header Logo-->
+                <div class="header-logo">
+                    <a th:href="/">
+                        <img alt="Logo" th:src="@{/resources/images/logos/logo.png}"/>
+                    </a>
+                </div>
 
                     <!--end::Header Logo-->
 

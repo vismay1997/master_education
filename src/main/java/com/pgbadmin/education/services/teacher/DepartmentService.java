@@ -1,7 +1,7 @@
-package com.pgbadmin.education.services;
+package com.pgbadmin.education.services.teacher;
 
 import com.pgbadmin.education.models.teacher.Department;
-import com.pgbadmin.education.repositories.DepartmentRepository;
+import com.pgbadmin.education.repositories.teacher.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

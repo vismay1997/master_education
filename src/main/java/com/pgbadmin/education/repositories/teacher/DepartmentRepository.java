@@ -1,4 +1,4 @@
-package com.pgbadmin.education.repositories;
+package com.pgbadmin.education.repositories.teacher;
 
 import com.pgbadmin.education.models.teacher.Department;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <div layout:fragment="mobile-header">
+<div layout:fragment="mobile-header">
 
-        <!--begin::Header Mobile-->
-        <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 
-            <!--begin::Logo-->
-            <a href="index.html">
-                <img alt="Logo" src="resources/images/logos/logo.png" />
-            </a>
+        <!--begin::Logo-->
+        <a href="index.html">
+            <img alt="Logo" th:src="@{/resources/images/logos/logo.png}"/>
+        </a>
 
-            <!--end::Logo-->
+        <!--end::Logo-->
 
-            <!--begin::Toolbar-->
-            <div class="d-flex align-items-center">
+        <!--begin::Toolbar-->
+        <div class="d-flex align-items-center">
 
                 <!--begin::Header Menu Mobile Toggle-->
                 <button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
