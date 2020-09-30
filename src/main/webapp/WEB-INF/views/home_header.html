@@ -19,7 +19,7 @@
                 <!--begin::Header Logo-->
                 <div class="header-logo">
                     <a href="index.html">
-                        <img alt="Logo" th:src="@{resources/images/logos/logo.png}"/>
+                        <img alt="Logo" th:src="@{/resources/images/logos/logo.png}"/>
                     </a>
                 </div>
 
@@ -266,7 +266,8 @@
             <div class="topbar" style="z-index: 2">
                 <!--begin::User-->
                 <div class="topbar-item">
-                    <a th:href="@{/login}" class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2">
+                    <a th:href="@{/access/login}"
+                       class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2">
                         <span class="svg-icon svg-icon-primary svg-icon-2x svg-icon-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

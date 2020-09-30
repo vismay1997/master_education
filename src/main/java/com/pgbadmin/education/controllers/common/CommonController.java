@@ -15,8 +15,4 @@ public class CommonController {
         return "common/error";
     }
 
-    @GetMapping("/home")
-    public String getHomePage() {
-        return "home/index";
-    }
 }

@@ -4,6 +4,7 @@ package com.pgbadmin.education.configurations;
 import com.pgbadmin.education.handlers.CustomLoginFailureHandler;
 import com.pgbadmin.education.handlers.CustomSuccessHandler;
 import com.pgbadmin.education.providers.CustomAuthenticationProvider;
+import com.pgbadmin.education.providers.CustomLogoutSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,10 +31,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private CustomLoginFailureHandler customLoginFailureHandler;
 
+    @Autowired
+    private CustomLogoutSuccessHandler customLogoutSuccessHandler;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/resources/**", "/access/**", "/common/**").permitAll()
+                .antMatchers("/resources/**", "/access/**", "/common/**", "/home/**").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/teacher/**").hasRole("TEACHER")
                 .antMatchers("/student/**").hasRole("STUDENT")
@@ -46,7 +50,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling().accessDeniedPage("/access-denied")
                 .and()
                 .logout()
-                .logoutSuccessUrl("/public/logout").permitAll().
+                .logoutUrl("/access/logout")
+                .logoutSuccessHandler(customLogoutSuccessHandler).permitAll().
                 and().csrf().disable();
     }
 
