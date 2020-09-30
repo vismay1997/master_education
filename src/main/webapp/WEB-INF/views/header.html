@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -32,7 +33,8 @@
                         <!--begin::Header Nav-->
                         <ul class="menu-nav">
 
-                            <li class="menu-item  menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+                            <li sec:authorize="hasRole('ROLE_ADMIN')" class="menu-item  menu-item-submenu"
+                                data-menu-toggle="hover" aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">Pages Section</span>
                                     <i class="menu-arrow"></i>
@@ -214,7 +216,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="menu-item  menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+                            <li sec:authorize="hasRole('ROLE_ADMIN')" class="menu-item  menu-item-submenu"
+                                data-menu-toggle="hover" aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">Module Section</span>
                                     <i class="menu-arrow"></i>
@@ -375,7 +378,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
+                            <li sec:authorize="hasRole('ROLE_ADMIN')" class="menu-item menu-item-submenu menu-item-rel"
+                                data-menu-toggle="hover"
                                 aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">User Management</span>
@@ -555,7 +559,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
+                            <li sec:authorize="hasRole('ROLE_TEACHER')"
+                                class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
                                 aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">Department & Class Management</span>
@@ -925,7 +930,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
+                            <li sec:authorize="hasRole('ROLE_STUDENT')"
+                                class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
                                 aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">Student Corner</span>
@@ -1304,7 +1310,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
+                            <li sec:authorize="hasRole('ROLE_STUDENT')"
+                                class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
                                 aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">Smart Library</span>
@@ -1453,7 +1460,8 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
+                            <li sec:authorize="hasAnyRole('ROLE_STUDENT','ROLE_ADMIN','ROLE_ADMIN')"
+                                class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="hover"
                                 aria-haspopup="true">
                                 <a href="javascript:" class="menu-link menu-toggle">
                                     <span class="menu-text">Web Mail</span>
