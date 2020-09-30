@@ -22,6 +22,6 @@ public class CustomLoginFailureHandler implements AuthenticationFailureHandler {
         } else if (exception.getClass() == BadCredentialsException.class) {
             message = "check your password";
         }
-        httpServletResponse.sendRedirect("/access/login?error" + message);
+        httpServletResponse.sendRedirect("/access/login?error=" + message);
     }
 }
