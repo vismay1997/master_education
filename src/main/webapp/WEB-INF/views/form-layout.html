@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Patel Group Of Business Administration</title>
+    <meta name="description"
+          content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+
+    <link th:href="@{/resources/css/pink-vender.bundle.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/resources/css/pink-theme.bundle.css}" rel="stylesheet" type="text/css"/>
+
+    <!--begin::Layout Themes(used by all pages)-->
+    <link th:href="@{/resources/css/themes/layout/header/base/pink-light.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/resources/css/themes/layout/header/menu/pink-light.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/resources/css/themes/layout/header/brand/pink-light.css}" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" th:href="@{/resources/images/logos/logo.png}"/>
+</head>
+<body id="kt_body" class=" header-fixed header-mobile-fixed subheader-enabled subheader-fixed  page-loading">
+<!--begin::Main-->
+<div layout:include="loader :: loader"></div>
+<div layout:include="mobile-header :: mobile-header"></div>
+<div class="d-flex flex-column flex-root">
+
+    <!--begin::Page-->
+    <div class="d-flex flex-row flex-column-fluid page">
+
+        <!--begin::Wrapper-->
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+            <div layout:include="header :: header"></div>
+            <div class="container">
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+                    <div th:if="${false}" class="alert alert-custom alert-outline-success fade show mb-5"
+                         role="alert">
+                        <div class="alert-icon"><i class="flaticon-multimedia-2"></i></div>
+                        <div class="alert-text">A simple primary alert—check it out!</div>
+                        <div class="alert-close">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card card-custom  gutter-b">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h3 class="card-label">
+                                            <script layout:fragment="heading"></script>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div layout:fragment="content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Content-->
+            </div>
+
+
+            <div layout:include="footer :: footer"></div>
+        </div>
+
+        <!--end::Wrapper-->
+    </div>
+</div>
+
+<!--end::Page-->
+
+<!--end::Main-->
+<div layout:include="quick-user :: quick_user"></div>
+
+<script>var KTAppSettings = {"breakpoints": {"sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200},
+    "colors": {
+        "theme": {
+            "base": {
+                "white": "#ffffff",
+                "primary": "##d54b4b",
+                "secondary": "#E5EAEE",
+                "success": "#1BC5BD",
+                "info": "#8950FC",
+                "warning": "#FFA800",
+                "danger": "#F64E60",
+                "light": "#F3F6F9",
+                "dark": "#212121"
+            },
+            "light": {
+                "white": "#ffffff",
+                "primary": "#E1F0FF",
+                "secondary": "#ECF0F3",
+                "success": "#C9F7F5",
+                "info": "#EEE5FF",
+                "warning": "#FFF4DE",
+                "danger": "#FFE2E5",
+                "light": "#F3F6F9",
+                "dark": "#D6D6E0"
+            },
+            "inverse": {
+                "white": "#ffffff",
+                "primary": "#ffffff",
+                "secondary": "#212121",
+                "success": "#ffffff",
+                "info": "#ffffff",
+                "warning": "#ffffff",
+                "danger": "#ffffff",
+                "light": "#464E5F",
+                "dark": "#ffffff"
+            }
+        },
+        "gray": {
+            "gray-100": "#F3F6F9",
+            "gray-200": "#ECF0F3",
+            "gray-300": "#E5EAEE",
+            "gray-400": "#D6D6E0",
+            "gray-500": "#B5B5C3",
+            "gray-600": "#80808F",
+            "gray-700": "#464E5F",
+            "gray-800": "#1B283F",
+            "gray-900": "#212121"
+        }
+    },
+    "font-family": "Poppins"
+};</script>
+
+
+<script th:src="@{/resources/js/vender.bundle.js}"></script>
+<script th:src="@{/resources/js/theme.bundle.js}"></script>
+<script layout:fragment="scripts"></script>
+
+</body>
+</html>

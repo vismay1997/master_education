@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TeacherDashboardController {
     @GetMapping("/home")
     public String getTeacherHome() {
-        return "teacher/index";
+        return "teacher/home";
     }
 }

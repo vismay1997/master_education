@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{report-layout}">
+<body>
+<div layout:fragment="content">
+    <div class="card-body">
+        <!--begin: Datatable-->
+        <table class="table table-bordered table-hover table-checkable" id="kt_datatable"
+               style="margin-top: 13px !important">
+            <thead>
+            <tr>
+                <th>Department ID</th>
+                <th>Department Name</th>
+                <th>Description</th>
+                <th>Department Logo</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+        </table>
+        <!--end: Datatable-->
+    </div>
+</div>
+<div layout:fragment="scripts">
+    <script type="text/javascript">
+        var table = $('#kt_datatable');
+
+        table.DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: "ajax-search-department",
+                type: 'POST',
+                "dataType": "json",
+                "contentType": "application/json",
+                "data": function (d) {
+                    return JSON.stringify(d);
+                }
+            },
+            columns: [
+                {data: 'department_id'},
+                {data: 'departmentName'},
+                {data: 'description'},
+                {data: 'departmentLogo', responsivePriority: -2},
+                {data: 'department_id', responsivePriority: -1},
+            ],
+            columnDefs: [
+                {
+                    targets: -2,
+                    title: 'Department Logo',
+                    orderable: false,
+                    render: function (data, type, full, meta) {
+                        console.log("Data" + data);
+                        return '\
+							<img style="height:50px; width: 50px;" src="data:image/jpeg;base64,' + data + '/> \
+						';
+                    },
+                },
+                {
+                    targets: -1,
+                    title: 'Actions',
+                    orderable: false,
+                    render: function (data, type, full, meta) {
+                        return '\
+							<a href="edit-department/' + data + '" class="btn btn-sm btn-clean btn-icon" title="Edit details">\
+								<i class="fa flaticon-edit-1"></i>\
+							</a>\
+						';
+                    },
+                }
+            ],
+        });
+    </script>
+</div>
+</body>
+</html>
